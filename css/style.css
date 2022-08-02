@@ -1,6 +1,38 @@
 body{
+    /* background-color: gold; */
+    background-image: url("/image/background.jpg");
+    /* background-attachment:scroll; */
+    background-size: 100%;
 
-    background-color: gold;
+}
+
+#container{
+    width: 90%;
+    text-align: center;
+    margin: 6px auto;
+}
+
+table{
+    width: 50%;
+    margin: 12px auto;
+    border: 3px solid black;
+}
+
+.lotto-number{
+    margin-top: 12px;
+}
+
+td{
+    background-color: white;
+    border: 1px dotted;
+}
+
+button{
+    background-color: lawngreen;
+    width:80px;
+    border-radius: 3px;
+    height: 30px;
+   
 }
 
 .date {
@@ -14,3 +46,14 @@ p.date{
     border-radius: 6px;
     background-color: black;
 }
+
+span.date{
+    color:yellow;
+}
+
+@media screen and (max-width:768px){
+    table{
+        width: 70%;
+    }    
+}
+

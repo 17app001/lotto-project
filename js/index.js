@@ -1,6 +1,6 @@
 
 const dateEl = document.querySelectorAll(".date");
-const lottoEl = document.querySelector(".lotto-number ul");
+const lottoEl = document.querySelector(".lotto-number");
 const startEl = document.querySelector("#start");
 
 console.log(startEl);
@@ -35,15 +35,27 @@ function showTime() {
 }
 
 startEl.addEventListener("click", () => {
-    dateEl[1].innerText = "2022/7/28";
-    console.log("click!2");
-    lottoEl.innerHTML = "";
+    let selectCount = document.querySelector("#count").value;
+    let inputCount = document.querySelector("#input-count").value;
 
-    for (let i = 0; i < 5; i++) {
+    let count = inputCount == "" ? selectCount : inputCount;
+
+    console.log(count, inputCount);
+    dateEl[1].innerText = getTime(false);
+
+    let tempStr = "<table>";
+    for (let i = 0; i < count; i++) {
+        tempStr += "<tr>";
         let numbers = getLottoNumber(1, 49, 6, true);
-        console.log(numbers.join(" "));
-        lottoEl.innerHTML += `<li>${numbers.join(" ")}</li>`;
+        for (let j = 0; j < numbers.length; j++) {
+            tempStr += `<td>${numbers[j]}</td>`;
+        }
+        tempStr += "</tr>";
     }
+
+    tempStr += "</table>";
+
+    lottoEl.innerHTML = tempStr;
 });
 
 
